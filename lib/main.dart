@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:latihan1/Screen/page_kedua.dart';
+import 'package:latihan1/Screen/page_keempat.dart';
+import 'package:latihan1/Screen/page_ketiga.dart';
+import 'package:latihan1/Screen/page_satu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,13 +52,69 @@ class PageOne extends StatelessWidget {
         //appBar : properti dari sebuah widget
         //AppBar : widget
 
-        title: Text('First App',
+        title: Text(
+          'First App',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.black,
       ),
       body: Center(
-        child: Text("Selamat Datang di Flutter App pertama MI 2B"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Selamat Datang di Flutter App pertama Mi2b"),
+            MaterialButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)
+              => PageSatu()));
+            },
+              //ini untuk pindah page
+              color: Colors.black,
+              child: Text('Page 1',
+                style: TextStyle(fontSize: 14, color: Colors.white ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                => PageDua()));
+              },
+              elevation: 18.0,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              //ini untuk pindah page
+              color: Colors.black,
+                clipBehavior: Clip.antiAlias,
+              child: Text('Page 2',
+                style: TextStyle(fontSize: 14, color: Colors.white ),
+              ),
+            ),
+            ),
+            MaterialButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)
+              => PageTiga()));
+            },
+              //ini untuk pindah page
+              color: Colors.black,
+              child: Text('Page 3',
+                style: TextStyle(fontSize: 14, color: Colors.white ),
+              ),
+            ),
+
+            MaterialButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)
+              => PageEmpat()));
+            },
+              //ini untuk pindah page
+              color: Colors.black,
+              child: Text('Page 4',
+                style: TextStyle(fontSize: 14, color: Colors.white ),
+              ),
+            ),
+          ],
+        ),
+
+
         //child :  cuma bisa nampung 1 widget
         //children : bisa nampung beberapa widget
       ),
